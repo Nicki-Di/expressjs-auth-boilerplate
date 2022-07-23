@@ -16,7 +16,6 @@ const userValidator = async (user) => {
 
         role: Joi.string()
             .valid('admin', 'normal')
-            .required()
     })
 
     try {

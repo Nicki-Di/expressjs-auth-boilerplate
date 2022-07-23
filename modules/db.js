@@ -33,17 +33,18 @@ const createUsersTables = () => {
 }
 
 const addUser = user => {
-    let query = `INSERT INTO Users (name, email, password, role) VALUES ("${user.name}", "${user.email}", "${user.password}", "${user.role}");`
+    let query = `INSERT INTO Users (name, email, password, role) VALUES ("${user.name}", "${user.email}", "${user.password}", "normal");`
 
     return new Promise((resolve, reject) => {
         connection.query(query, (error, result) => {
-            error ? reject(error.message) : resolve(result)
+            if (error) return reject(error.message)
+            else return resolve(result)
         })
     })
 }
 
-const getUser = user => {
-    let query = `SELECT * FROM Users WHERE email = "${user.email}";`
+const getUser = email => {
+    let query = `SELECT * FROM Users WHERE email = "${email}";`
     return new Promise((resolve, reject) => {
         connection.query(query, (error, result) => {
             if (error) {
@@ -52,7 +53,7 @@ const getUser = user => {
                 if (result.length > 0) {
                     resolve(result[0])
                 } else {
-                    resolve({})
+                    reject("No such user found.")
                 }
             }
         })

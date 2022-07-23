@@ -3,8 +3,8 @@ const config = require("config");
 
 const generateJWT = (user) => {
     return jwt.sign({
-        id: user.id,
+        email: user.email,
         role: user.role
-    }, config.get("privateKey"), {expiresIn: '1000'})
+    }, config.get("privateKey"), {expiresIn: config.get("expiresIn")})
 }
 module.exports = generateJWT
