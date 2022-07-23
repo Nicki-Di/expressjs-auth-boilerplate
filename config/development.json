@@ -1,0 +1,9 @@
+{
+  "appName": "auth-template-dev",
+  "port": 5001,
+  "db": {
+    "host": "localhost",
+    "user": "auth_user",
+    "database_name": "auth_db"
+  }
+}

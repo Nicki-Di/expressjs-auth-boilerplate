@@ -1,0 +1,6 @@
+{
+  "db": {
+    "password": "auth_db_password"
+  },
+  "privateKey": "auth_privateKey"
+}
