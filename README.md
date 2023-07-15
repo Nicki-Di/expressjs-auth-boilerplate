@@ -1,7 +1,3 @@
-# auth-template
-- environment variables to be set:
-  auth_privateKey=hello;DEBUG=auth:*;auth_db_password=auth_user
-- for production, also set NODE_ENV=production
 ## Authentication boilerplate code 🔑
 *Using Express.js (Node.js) with Cookie and JWT*
 
